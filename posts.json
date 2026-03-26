@@ -1,0 +1,18 @@
+[
+  {
+    "date": "Mar 26, 2026",
+    "week": "Week 0",
+    "tag": "day0",
+    "tagLabel": "Day 0",
+    "title": "Learning shit as I want it.",
+    "body": [
+      "Since I remember I always had a problem with structured learning. I think I never did my homework and always belived I am very bad at math. With age and experience, I noticed that the best way for me to learn is just by building stuff. I could watch 100 tutorials and nothing would stick, but give me a problem to slove and I will obsess over this until it‘s resolved. Now, I also firmly belive that formal education doesn‘t make sense anymore, the structure is old and it't not adapting to the current times fast enough, yet we still default to <strong>universities</strong> when we think about the credentials. I belive in the <strong>proof of work</strong>, literally, try to make stuff, fail, learn and repeat until you have something cool. The only viable concept in formal education is the idea of curriculum, the structured and logical learning plan a roadmap. What I also learned through the years is that I need a roadmap/ training plan to be consisted. We used to depend on universtities or bootcamps or online courses, but with enough understaning of your own learning style and AI, you can curate the curriculum yourself and optimize it for your life circumstances and your background. So yeah, this is my robotics roadmap, that is optimized for <strong>fun and building</strong>, using easily accesible online resources. Cheers!"
+    ],
+    "links": [
+      {
+        "label": "Full curriculum",
+        "url": "https://stupendous-conkies-9eb010.netlify.app/"
+      }
+    ]
+  }
+]
