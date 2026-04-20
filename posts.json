@@ -14,5 +14,15 @@
         "url": "https://stupendous-conkies-9eb010.netlify.app/"
       }
     ]
+  },
+  {
+    "date": "Apr 20, 2026",
+    "week": "Week 3",
+    "tag": "week3",
+    "tagLabel": "Week 3",
+    "title": "Being a generalist is a cheat code.",
+    "body": [
+      "This week I want to talk about being a <strong>generalist</strong> and why that‘s helpful when you‘re tinkering with anything. Since I remember, I was interested in absolutely everything and my interests changed every week. As a small girl, one week I wanted to be a dentist, then a movie director, then an electrician. I never had an issue with changing direction when something new caught me, and when I started my career I had a pretty easy time just following whatever interested me. In the beginning it‘s hard because you don‘t know what you don‘t know, you just need to grab something and get some depth in it. In my case that was <strong>data analysis</strong>, and once I had depth in one area it became very natural to build on top of that. That‘s how I moved from data analysis to data engineering, to software development, to product architecture, and then to being a forward deployed engineer solving customer problems. Through all of that I noticed that two things motivate me very deeply when learning anything: <strong>following what actually interests me</strong>, and <strong>having a real problem to solve</strong>. I think at the core every human being is wired like that, which is why gaming and cliffhanger-y Netflix series will always be popular — it‘s something that interests you, gives you a bit of a thrill, plus a puzzle to solve on top. That‘s also why I got interested in robotics in the first place — after a certain time, software only, purely virtual, was not enough for me. I got really interested in translating software into the <strong>physical world</strong>, and I think a lot of people have this natural progression, especially with some microelectronics background from university to lean on. The other layer I realized is how much it helps to approach a new area from what you already know. It sounds obvious, but it‘s surprising how certain areas translate — like the software development cycle translating to the hardware development cycle. There are nuances, but the background carries you. And on top of that, <strong>original solutions</strong> start appearing through being multi-dimensional. If I have knowledge in business, in serving the customer and resolving their pain, in software and data, and now in robotics, that‘s a full package for solving original, hard problems through a multifaceted background. Build log update: the driving part of the cleaning robot is being assembled. There‘s a problem with acceleration in the wheels — purely a hardware issue. It made me realize that <strong>hardware is much more difficult than software</strong>, mostly because of debugging. The bugs are a different flavor (usually it‘s electricity not flowing through a circuit, or something along those lines), but actually finding the exact part that isn‘t working is one of the hardest things for me in hardware so far."
+    ]
   }
 ]
