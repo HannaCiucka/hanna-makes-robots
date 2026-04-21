@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hanna Makes Robots</title>
+  <title>Hanna Schulze — Proof of Work</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #0d0d0d;
-      --surface: #141414;
-      --border: #252525;
-      --accent: #ff4d00;
-      --accent2: #ffb800;
-      --text: #e8e8e8;
-      --muted: #5a5a5a;
-      --mono: 'Space Mono', monospace;
-      --display: 'Syne', sans-serif;
+      --bg: #ffffff;
+      --surface: #f4f4f4;
+      --border: #0a0a0a;
+      --hairline: #d9d9d9;
+      --accent: #e60012;
+      --text: #0a0a0a;
+      --muted: #6a6a6a;
+      --sans: 'Inter', -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,439 +26,354 @@
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: var(--mono);
-      font-size: 14px;
-      line-height: 1.7;
-      overflow-x: hidden;
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 1000;
-      opacity: 0.35;
+    a { color: var(--text); text-decoration: none; }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 3vw, 2rem);
     }
 
-    /* ── HEADER ── */
+    /* HEADER */
     header {
-      border-bottom: 1px solid var(--border);
-      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      border-bottom: 2px solid var(--border);
+    }
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1rem clamp(1.25rem, 3vw, 2rem);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 56px;
-      position: sticky;
-      top: 0;
-      background: rgba(13,13,13,0.94);
-      backdrop-filter: blur(12px);
-      z-index: 100;
     }
-
     .logo {
-      font-family: var(--display);
-      font-weight: 800;
+      font-family: var(--sans);
+      font-weight: 900;
       font-size: 0.95rem;
       letter-spacing: -0.02em;
+      text-transform: uppercase;
       color: var(--text);
-      text-decoration: none;
     }
     .logo span { color: var(--accent); }
 
-    nav { display: flex; gap: 2rem; }
+    nav { display: flex; gap: 1.5rem; }
     nav a {
-      color: var(--muted);
-      text-decoration: none;
+      font-family: var(--mono);
       font-size: 11px;
-      letter-spacing: 0.1em;
       text-transform: uppercase;
-      transition: color 0.2s;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      transition: color 0.15s;
     }
     nav a:hover { color: var(--accent); }
 
-    /* ── HERO ── */
+    /* HERO */
     .hero {
-      padding: clamp(3.5rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem) 3rem;
-      max-width: 860px;
-      animation: fadeUp 0.7s ease both;
-    }
-
-    .hero-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.75rem;
-    }
-
-    .dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      animation: pulse 2s infinite;
-      flex-shrink: 0;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.25; }
+      padding: clamp(2.5rem, 5vw, 4rem) 0 clamp(2rem, 4vw, 3rem);
+      border-bottom: 1px solid var(--hairline);
     }
 
     h1 {
-      font-family: var(--display);
-      font-weight: 800;
-      font-size: clamp(2.4rem, 6.5vw, 5rem);
-      line-height: 1.02;
-      letter-spacing: -0.03em;
-      margin-bottom: 1.5rem;
-    }
-
-    h1 em { font-style: normal; color: var(--accent); }
-
-    .hero-intro {
-      font-size: 15px;
-      color: var(--muted);
-      max-width: 580px;
-      line-height: 1.85;
-    }
-
-    .hero-intro strong { color: var(--text); }
-
-    .hero-stats {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 2rem;
-    }
-
-    .stat-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 11px;
-      padding: 0.35rem 0.8rem;
-      border: 1px solid var(--border);
-      color: var(--muted);
-    }
-
-    /* ── LAYOUT ── */
-    .page {
-      display: grid;
-      grid-template-columns: 1fr 300px;
-      border-top: 1px solid var(--border);
-    }
-
-    .main-col { border-right: 1px solid var(--border); min-width: 0; }
-    .side-col { min-width: 0; }
-
-    /* ── LOG ── */
-    .log-header {
-      padding: 1.75rem clamp(1.5rem, 4vw, 3rem);
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .log-header h2 {
-      font-family: var(--display);
-      font-weight: 800;
-      font-size: 1rem;
-      letter-spacing: -0.01em;
-    }
-
-    #entry-count { font-size: 11px; color: var(--muted); }
-
-    .log-entry {
-      padding: 2.5rem clamp(1.5rem, 4vw, 3rem);
-      border-bottom: 1px solid var(--border);
-      transition: background 0.2s;
-      animation: fadeUp 0.5s ease both;
-    }
-
-    .log-entry:hover { background: rgba(255,77,0,0.02); }
-
-    .entry-meta {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .entry-date { font-size: 11px; color: var(--muted); letter-spacing: 0.05em; }
-
-    .entry-tag {
-      font-size: 10px;
-      letter-spacing: 0.12em;
+      font-family: var(--sans);
+      font-weight: 900;
+      font-size: clamp(3rem, 11vw, 8rem);
+      line-height: 0.92;
+      letter-spacing: -0.045em;
       text-transform: uppercase;
-      padding: 0.15rem 0.55rem;
-      border: 1px solid var(--border);
-      color: var(--muted);
+      margin-bottom: 2.5rem;
     }
-
-    .entry-tag.day0   { border-color: var(--accent);  color: var(--accent); }
-    .entry-tag.phase1 { border-color: var(--accent2); color: var(--accent2); }
-    .entry-tag.win    { border-color: #4caf50; color: #4caf50; }
-    .entry-tag.fail   { border-color: #f44336; color: #f44336; }
-
-    .entry-week { font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-left: auto; }
-
-    .log-entry h3 {
-      font-family: var(--display);
-      font-weight: 700;
-      font-size: 1.1rem;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.75rem;
-      line-height: 1.3;
-    }
-
-    .log-entry p {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.85;
-      max-width: 620px;
-    }
-
-    .log-entry p + p { margin-top: 0.75rem; }
-    .log-entry p strong { color: var(--text); }
-
-    .entry-footer { margin-top: 1.5rem; display: flex; gap: 1rem; }
-
-    .entry-link {
-      font-size: 11px;
+    h1 em {
+      font-style: normal;
       color: var(--accent);
-      text-decoration: none;
-      letter-spacing: 0.06em;
-    }
-    .entry-link::after { content: ' →'; }
-    .entry-link:hover { text-decoration: underline; }
-
-    .log-next {
-      padding: 2rem clamp(1.5rem, 4vw, 3rem);
-      opacity: 0.3;
     }
 
-    .log-next p { font-size: 12px; color: var(--muted); font-style: italic; }
-
-    /* ── SIDEBAR ── */
-    .side-section {
-      padding: 1.75rem 1.5rem;
-      border-bottom: 1px solid var(--border);
+    .subtitle {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+      color: var(--muted);
+      letter-spacing: -0.01em;
+      margin-bottom: 2.5rem;
     }
 
-    .side-label {
-      font-size: 10px;
-      letter-spacing: 0.15em;
+    .standfirst {
+      max-width: 720px;
+      font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--text);
+      padding-top: 2rem;
+      border-top: 2px solid var(--border);
+    }
+    .standfirst strong { font-weight: 700; }
+
+    .byline {
+      margin-top: 1.5rem;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 1.1rem;
     }
 
-    .about-text { font-size: 12px; color: var(--muted); line-height: 1.8; }
-    .about-text strong { color: var(--text); }
-    .about-text p + p { margin-top: 0.6rem; }
-
-    .phase-item {
-      padding: 0.9rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .phase-item:last-child { border-bottom: none; }
-
-    .phase-row {
+    /* SECTION HEAD */
+    .section-head {
+      padding: 1rem 0;
+      border-top: 2px solid var(--border);
+      border-bottom: 1px solid var(--hairline);
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 0.25rem;
+      gap: 1.5rem;
+    }
+    .section-head h2 {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: -0.01em;
+    }
+    .section-head .meta {
+      font-family: var(--mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
     }
 
-    .phase-name { font-size: 12px; font-family: var(--display); font-weight: 700; }
-    .phase-wks { font-size: 10px; color: var(--muted); }
-    .phase-desc { font-size: 11px; color: var(--muted); line-height: 1.6; margin-bottom: 0.5rem; }
-
-    .progress-bar { height: 2px; background: var(--border); position: relative; }
-    .progress-bar::after {
-      content: '';
-      position: absolute;
-      left: 0; top: 0;
-      height: 100%;
-      background: var(--accent);
-      width: var(--pct, 0%);
+    /* LOG */
+    .log-entry {
+      padding: clamp(2rem, 4vw, 3rem) 0;
+      border-bottom: 1px solid var(--hairline);
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 1.5rem;
+      animation: fadeUp 0.5s ease both;
     }
 
-    .phase-item.active .phase-name { color: var(--accent); }
-
-    .hw-item {
+    .entry-side {
+      font-family: var(--mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.55rem 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 12px;
+      flex-direction: column;
+      gap: 0.5rem;
     }
-    .hw-item:last-child { border-bottom: none; }
-    .hw-status { font-size: 10px; color: var(--muted); }
-    .hw-status.ordered { color: var(--accent2); }
+    .entry-side .entry-date { color: var(--text); font-weight: 500; }
+    .entry-side .entry-week { color: var(--muted); }
+    .entry-side .entry-tag {
+      display: inline-block;
+      width: fit-content;
+      margin-top: 0.25rem;
+      padding: 0.15rem 0.4rem;
+      border: 1px solid var(--hairline);
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+    }
 
+    .entry-body { min-width: 0; max-width: 720px; }
+
+    .log-entry h3 {
+      font-family: var(--sans);
+      font-weight: 800;
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .log-entry p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text);
+    }
+    .log-entry p strong {
+      font-weight: 700;
+    }
+    .log-entry p + p { margin-top: 0.85rem; }
+
+    .entry-footer { margin-top: 1.5rem; display: flex; gap: 1.25rem; flex-wrap: wrap; }
+    .entry-link {
+      font-family: var(--mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 2px;
+    }
+    .entry-link::after { content: ' →'; }
+    .entry-link:hover { background: var(--accent); color: #fff; }
+
+    .log-next {
+      padding: clamp(2rem, 4vw, 3rem) 0;
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 1.5rem;
+      opacity: 0.55;
+    }
+    .log-next .entry-side { color: var(--muted); }
+    .log-next p {
+      max-width: 620px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* DOSSIER */
+    .dossier {
+      background: var(--surface);
+      border-top: 2px solid var(--border);
+      padding: clamp(2.5rem, 5vw, 4rem) 0;
+    }
+
+    .dossier-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.5rem;
+    }
+
+    .dossier-col {
+      grid-column: span 8;
+      max-width: 720px;
+    }
+    .dossier-col h4 {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.25rem;
+    }
+    .dossier-col > p {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .dossier-col > p + p { margin-top: 0.55rem; }
+    .dossier-col > p strong { font-weight: 700; }
+
+    /* FOOTER */
     footer {
-      border-top: 1px solid var(--border);
-      padding: 1.5rem clamp(1.5rem, 5vw, 4rem);
+      border-top: 2px solid var(--border);
+      background: var(--bg);
+    }
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1.5rem clamp(1.25rem, 3vw, 2rem);
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 1rem;
+      font-size: 13px;
+      color: var(--muted);
     }
-
-    footer p { font-size: 11px; color: var(--muted); }
-    footer a { color: var(--muted); text-decoration: none; }
-    footer a:hover { color: var(--accent); }
+    .footer-inner a {
+      color: var(--muted);
+      border-bottom: 1px solid var(--hairline);
+      padding-bottom: 1px;
+    }
+    .footer-inner a:hover { color: var(--accent); border-color: var(--accent); }
 
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(16px); }
+      from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 760px) {
-      .page { grid-template-columns: 1fr; }
-      .main-col { border-right: none; }
-      .side-col { border-top: 1px solid var(--border); }
-      nav { display: none; }
-      .entry-week { display: none; }
+    @media (max-width: 860px) {
+      .masthead { grid-template-columns: 1fr; }
+      .standfirst, .dataset { grid-column: auto; }
+      .dossier-col { grid-column: span 12; }
+      nav { gap: 1rem; }
+    }
+    @media (max-width: 600px) {
+      .log-entry, .log-next { grid-template-columns: 1fr; gap: 1rem; }
+      .entry-side { flex-direction: row; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+      .section-head { grid-template-columns: 1fr auto; }
+      .section-head .num { display: none; }
+      nav a:nth-child(n+3) { display: none; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <a class="logo" href="#">Hanna<span>.</span>Makes<span>.</span>Robots</a>
-    <nav>
-      <a href="#log">Log</a>
-      <a href="#curriculum">Curriculum</a>
-      <a href="#about">About</a>
-    </nav>
+    <div class="header-inner">
+      <a class="logo" href="#">Hanna Schulze<span> / </span>Proof of Work</a>
+      <nav>
+        <a href="#log">Log</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
   </header>
 
-  <div class="hero">
-    <div class="hero-eyebrow">
-      <span class="dot"></span>
-      Build log — started March 2026
-    </div>
-    <h1>Hanna<br/>makes <em>robots.</em></h1>
-    <p class="hero-intro">
-      My 5-year-old keeps complaining that robots should clean up after him.
-      <strong>So I decided to learn how to build one.</strong>
-      I have, two small kids, zero formal robotics background.
-      I am just curious and I want to have fun.
-    </p>
-    <div class="hero-stats">
-      <span class="stat-pill"><span class="dot"></span> Active</span>
-      <span class="stat-pill">📍 Baar, Switzerland</span>
-      <span class="stat-pill">⏱ 7h/week</span>
-      <span class="stat-pill">👦👶 Mum of two</span>
-      <span class="stat-pill">🤖 Phase 1 of 4</span>
-    </div>
-  </div>
+  <div class="container">
+    <section class="hero">
+      <h1>Hanna Schulze<br/><em>Proof of Work.</em></h1>
+      <p class="subtitle">How I think and what I build.</p>
 
-  <div class="page">
+      <p class="standfirst">
+        I learn by building, not by reading about it. I don‘t trust credentials — I trust
+        <strong>proof of work</strong>: the stuff you actually made, the problems you actually solved.
+        This is where I keep mine. Thoughts, experiments, builds. Currently obsessed with robotics.
+      </p>
 
-    <div class="main-col" id="log">
-      <div class="log-header">
+      <p class="byline">Baar, CH · Product Architect @ DoiT · Mum of two · Building in public</p>
+    </section>
+
+    <section id="log">
+      <div class="section-head">
         <h2>Build log</h2>
-        <span id="entry-count"></span>
+        <span class="meta" id="entry-count"></span>
       </div>
 
-      <!-- Posts injected here by JS -->
       <div id="posts-container"></div>
 
       <div class="log-next">
-        <div class="entry-meta" style="margin-bottom:0.5rem;">
+        <div class="entry-side">
           <span class="entry-date">Coming next</span>
-          <span class="entry-tag phase1">Phase 1</span>
         </div>
         <p>Arduino Starter Kit arrives. First LED blink. Ruben helps push the button. Something probably breaks immediately.</p>
       </div>
-    </div>
-
-    <!-- SIDEBAR -->
-    <div class="side-col">
-
-      <div class="side-section" id="about">
-        <div class="side-label">Who I am</div>
-        <div class="about-text">
-          <p><strong>Product Architect</strong> at DoiT International. Cloud, GenAI, FinOps.</p>
-          <p>I love learning new shit, solving problems and building. I did that with software before, but it‘s not so fun anymore with AI around.</p>
-          <p>Inspired by Andreas Klinger, Sam Owens, and a 5-year-old with very strong opinions about housewchores.</p>
-        </div>
-      </div>
-
-      <div class="side-section" id="curriculum">
-        <div class="side-label">Curriculum</div>
-        <div class="phase-item active">
-          <div class="phase-row">
-            <span class="phase-name">01 · Foundations</span>
-            <span class="phase-wks">Wks 1–10</span>
-          </div>
-          <div class="phase-desc">Physics, electronics, Arduino, first simulation.</div>
-          <div class="progress-bar" style="--pct: 3%"></div>
-        </div>
-        <div class="phase-item">
-          <div class="phase-row">
-            <span class="phase-name">02 · Core theory</span>
-            <span class="phase-wks">Wks 11–28</span>
-          </div>
-          <div class="phase-desc">Kinematics, dynamics, PID control.</div>
-          <div class="progress-bar" style="--pct: 0%"></div>
-        </div>
-        <div class="phase-item">
-          <div class="phase-row">
-            <span class="phase-name">03 · Software stack</span>
-            <span class="phase-wks">Wks 29–42</span>
-          </div>
-          <div class="phase-desc">ROS 2, Gazebo, LeRobot imitation learning.</div>
-          <div class="progress-bar" style="--pct: 0%"></div>
-        </div>
-        <div class="phase-item">
-          <div class="phase-row">
-            <span class="phase-name">04 · The build</span>
-            <span class="phase-wks">Wks 43–72</span>
-          </div>
-          <div class="phase-desc">Wheeled robot arm. Picks up toys. Roborock runs.</div>
-          <div class="progress-bar" style="--pct: 0%"></div>
-        </div>
-      </div>
-
-      <div class="side-section">
-        <div class="side-label">Hardware tracker</div>
-        <div class="hw-item">
-          <span>Arduino Starter Kit</span>
-          <span class="hw-status">bought</span>
-        </div>
-        <div class="hw-item">
-          <span>Robot car kit</span>
-          <span class="hw-status">planned</span>
-        </div>
-        <div class="hw-item">
-          <span>SO-ARM101</span>
-          <span class="hw-status">future</span>
-        </div>
-        <div class="hw-item">
-          <span>Raspberry Pi 5</span>
-          <span class="hw-status">future</span>
-        </div>
-      </div>
+    </section>
   </div>
 
+  <section class="dossier">
+    <div class="container">
+      <div class="dossier-grid">
+
+        <div class="dossier-col" id="about">
+          <h4>Who I am</h4>
+          <p><strong>Product Architect</strong> at DoiT International. Cloud, GenAI, FinOps.</p>
+          <p>I love learning new shit, solving problems and building. I did that with software before, but it‘s not so fun anymore with AI around.</p>
+          <p>Inspired by Andreas Klinger, Sam Owens, and a 5-year-old with very strong opinions about housechores.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <footer>
-    <p>Hanna Makes Robots · Baar, Switzerland · Started March 2026</p>
-    <p>
-      <a href="hhttps://github.com/HannaCiucka" target="_blank">GitHub</a> ·
-      <a href="https://www.linkedin.com/in/hanna-schulze-2721ba153/" target="_blank">LinkedIn</a>
-    </p>
+    <div class="footer-inner">
+      <span>Hanna Schulze — Proof of Work · Baar, CH</span>
+      <span>
+        <a href="https://github.com/HannaCiucka" target="_blank">GitHub</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.linkedin.com/in/hanna-schulze-2721ba153/" target="_blank">LinkedIn</a>
+      </span>
+    </div>
   </footer>
 
   <script>
@@ -466,7 +382,7 @@
       const posts = await res.json();
 
       document.getElementById('entry-count').textContent =
-        `${posts.length} entr${posts.length === 1 ? 'y' : 'ies'}`;
+        `${String(posts.length).padStart(2, '0')} ${posts.length === 1 ? 'entry' : 'entries'}`;
 
       const container = document.getElementById('posts-container');
 
@@ -484,14 +400,16 @@
           : '';
 
         el.innerHTML = `
-          <div class="entry-meta">
+          <div class="entry-side">
             <span class="entry-date">${post.date}</span>
-            <span class="entry-tag ${post.tag}">${post.tagLabel}</span>
             <span class="entry-week">${post.week}</span>
+            <span class="entry-tag">${post.tagLabel}</span>
           </div>
-          <h3>${post.title}</h3>
-          ${post.body.map(p => `<p>${p}</p>`).join('')}
-          ${footer}
+          <div class="entry-body">
+            <h3>${post.title}</h3>
+            ${post.body.map(p => `<p>${p}</p>`).join('')}
+            ${footer}
+          </div>
         `;
 
         container.appendChild(el);
